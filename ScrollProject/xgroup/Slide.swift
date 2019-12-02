@@ -9,13 +9,10 @@
 import UIKit
 
 class Slide: UIView {
-
-
-    @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet private weak var imageView: UIImageView!
     
-    @IBOutlet weak var lblWidth: UILabel!
+    @IBOutlet private weak var lblWidth: UILabel!
     
-
-    @IBOutlet weak var lblHeight: UILabel!
+    @IBOutlet private weak var lblHeight: UILabel!
 }

@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var imagePager: UIPageControl!
+    @IBOutlet private weak var imagePager: UIPageControl!
     
     var imageStrings = ["theForce"]
     //var slides = [Slide]()
@@ -38,7 +38,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         imagePager.currentPage = 0
         
         view.bringSubviewToFront(imagePager)
-
     }
 
     private func createImageViews() {
@@ -82,12 +81,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * CGFloat(slides.count))
         scrollView.isPagingEnabled = true
         //scrollView.fle
-        for i in 0..<slides.count {
-            slides[i].frame = CGRect(x: 0, y: view.frame.height * CGFloat(i),
-                                     width: view.frame.width, height: view.frame.height)
-            scrollView.addSubview(slides[i])
+        for index in 0..<slides.count {
+            slides[index].frame = CGRect(x: 0,
+                                         y: view.frame.height * CGFloat(index),
+                                         width: view.frame.width,
+                                         height: view.frame.height)
+            scrollView.addSubview(slides[index])
         }
-        
     }
 
     /// round position to decide which page to settle on
@@ -95,7 +95,4 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let pageIndex = round(scrollView.contentOffset.y / view.frame.height)
         imagePager.currentPage = Int(pageIndex)
     }
-
-
 }
-
