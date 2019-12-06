@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet private weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet private weak var imagePager: UIPageControl!
     
@@ -54,6 +55,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         imageView.image = image
         imageView.contentMode = .scaleAspectFit
         slides.append(imageView)
+        /*
+        imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+ */
     }
     
     private func createSlides() {
@@ -77,22 +82,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
 
     private func setupScrollView(slides: [UIImageView]) {
-        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        scrollView.frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
         scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * CGFloat(slides.count))
         scrollView.isPagingEnabled = true
-        //scrollView.fle
+        
+        // calculate x position to center image
+        let xPosition = (view.frame.width - scrollView.frame.width) / 2
+        
         for index in 0..<slides.count {
-            slides[index].frame = CGRect(x: 0,
-                                         y: view.frame.height * CGFloat(index),
-                                         width: view.frame.width,
-                                         height: view.frame.height)
+            slides[index].frame = CGRect(x: xPosition,
+                                         y: scrollView.frame.height * CGFloat(index),
+                                         width: scrollView.frame.width,
+                                         height: scrollView.frame.height)
             scrollView.addSubview(slides[index])
         }
     }
 
     /// round position to decide which page to settle on
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.y / view.frame.height)
+        let pageIndex = round(scrollView.contentOffset.y / scrollView.frame.height)
         imagePager.currentPage = Int(pageIndex)
     }
 }

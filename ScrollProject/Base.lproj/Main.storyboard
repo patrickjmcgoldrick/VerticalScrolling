@@ -16,28 +16,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="D2g-SX-UDg">
-                                <rect key="frame" x="187.5" y="761" width="39" height="37"/>
+                                <rect key="frame" x="50" y="761" width="314" height="37"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="pageIndicatorTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avw-oW-8lk">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="hQD-g9-8NW"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="fyJ-cl-p2a"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YTK-1w-4eW">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <viewLayoutGuide key="safeArea" id="hQW-MR-zfa"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="I6L-jf-1hQ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="6Wz-d4-xcR"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="avw-oW-8lk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="65Q-jF-Ai3"/>
-                            <constraint firstItem="avw-oW-8lk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9cE-WR-Kas"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YTK-1w-4eW" secondAttribute="trailing" id="5Qn-FI-ePg"/>
                             <constraint firstItem="D2g-SX-UDg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BGb-4J-zrM"/>
-                            <constraint firstItem="avw-oW-8lk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VhW-Sk-elC"/>
-                            <constraint firstItem="avw-oW-8lk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ka5-kC-MbF"/>
+                            <constraint firstItem="YTK-1w-4eW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sgo-9t-mNH"/>
+                            <constraint firstItem="YTK-1w-4eW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c94-3M-UnM"/>
+                            <constraint firstItem="D2g-SX-UDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ce4-bQ-Suk"/>
+                            <constraint firstItem="YTK-1w-4eW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eYv-u7-Lim"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D2g-SX-UDg" secondAttribute="trailing" constant="50" id="hVa-tr-3Ba"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D2g-SX-UDg" secondAttribute="bottom" constant="64" id="n01-DJ-88H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="imagePager" destination="D2g-SX-UDg" id="7EO-6o-m78"/>
-                        <outlet property="scrollView" destination="avw-oW-8lk" id="Ias-zt-rHm"/>
+                        <outlet property="scrollView" destination="YTK-1w-4eW" id="7pT-lb-jJF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

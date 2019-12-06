@@ -109,10 +109,10 @@
 				5E86E068238CE8C20031DBF3 /* AppDelegate.swift */,
 				5E86E06A238CE8C20031DBF3 /* SceneDelegate.swift */,
 				5E86E06C238CE8C20031DBF3 /* ViewController.swift */,
-				5E86E06E238CE8C20031DBF3 /* Main.storyboard */,
 				5E86E074238CE8C40031DBF3 /* Assets.xcassets */,
-				5E86E076238CE8C40031DBF3 /* LaunchScreen.storyboard */,
 				5E86E079238CE8C40031DBF3 /* Info.plist */,
+				5E86E076238CE8C40031DBF3 /* LaunchScreen.storyboard */,
+				5E86E06E238CE8C20031DBF3 /* Main.storyboard */,
 				5E86E071238CE8C20031DBF3 /* ScrollProject.xcdatamodeld */,
 			);
 			path = ScrollProject;
